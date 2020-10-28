@@ -4,7 +4,7 @@ const ListContext = React.createContext();
 
 export const useList = () => {
     const context = React.useContext(ListContext);
-    if (!context) throw new Error("useCount must be used within a CountProvider");
+    if (!context) throw new Error("useList must be used within a ListProvider");
     const { userList, setUserList } = context;
     return { userList, setUserList };
 }
