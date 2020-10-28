@@ -1,24 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import CountProvider from './components/contexts/countContext';
+import Button from './components/elements/buttonComponent';
+import Counter from './components/elements/counterComponent';
+import Mirror from './components/elements/mirrorComponent';
+import HeaderLayout from './components/layouts/headerComponent';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <HeaderLayout />
+      <CountProvider>
+        <div className="App">
+          <Counter />
+          <hr></hr>
+          <Mirror />
+          <hr></hr>
+          <Button />
+        </div>
+      </CountProvider>
+    </>
   );
 }
 
